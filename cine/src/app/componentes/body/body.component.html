@@ -1,0 +1,63 @@
+  <div class="row">
+    <div class="col s6">
+      <div class="card">
+        <div class="card-image">
+          <img src="./assets/toy.jpg">
+        </div>
+        <div class="card-content">
+            <span class="card-title red-text">{{pelicula1Estreno}}</span>
+
+          <p *ngIf="estado1">Woody siempre ha confiado en su lugar en el mundo y que su prioridad es cuidar a su niño, 
+            ya sea Andy o Bonnie. Pero cuando Bonnie agrega un nuevo juguete reacio llamado Forky a su 
+            habitación, una aventura por carretera junto a viejos y nuevos amigos le mostrará a Woody 
+            lo grande que puede ser el mundo para un juguete Nueve años después, los juguetes viven todos
+            </p>
+        </div>
+        <div class="card-action">
+            <button (click)="estado1 = !estado1;" class="waves-effect waves-light btn">SINOPSIS</button>
+          </div>
+      </div>
+    </div>
+
+    <div class="col s6">
+      <div class="card">
+        <div class="card-image">
+          <img src="./assets/reyleon.jpg">
+        </div>
+        <div class="card-content">
+            <span class="card-title red-text">{{pelicula2Estreno}}</span>
+
+          <p *ngIf="estado2"> La historia sigue la vida del pequeño Simba, un cachorro de león que vive felizmente 
+            en la sabana con el resto de su familiaalgo que no termina 
+            de aceptar su hermano Scar, quien tratará por todos los medios de deshacerse de él. Será entonces cuando 
+            Simba tendrá que huir y abandonar su hogar para adentrarse en nuevos y aterradores parajes. 
+            en su camino Timón y Pumba,que harán que la vida del pequeño león una aventura</p>
+        </div>
+        <div class="card-action">
+            <button (click)="estado2 = !estado2;" class="waves-effect waves-light btn">SINOPSIS</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col s6">
+    <div class="card-panel amber lighten-3">
+      <button (click)="estado3 = !estado3" class="waves-effect waves-light btn">Proximos estrenos</button>
+      <ul *ngFor="let estreno of proximosEstrenos">
+        <li *ngIf="estado3" class="center"> {{estreno}} </li>
+        <hr>
+      </ul>
+    </div>
+  </div>
+  <div class="col s6">
+      <div class="card-panel amber lighten-3">
+        <button (click)="estado4 = !estado4" (click)=" precio();" class="waves-effect waves-light btn">Precio</button>
+        <h5 *ngIf="estado4"  class="center">Toy story 4</h5>
+        <h6 *ngIf="estado4" class="center">{{precioEntredas.tstory}}</h6>
+        <h5 *ngIf="estado4" class="center">La vida secreta de tus mascotas</h5>
+        <h6 *ngIf="estado4"  class="center">{{precioEntredas.mascotas}}</h6>
+
+      </div>
+    </div>
+</div>
